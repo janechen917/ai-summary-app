@@ -1,8 +1,9 @@
 export const runtime = 'nodejs';
 import { NextResponse } from 'next/server';
-import supabaseAdmin from '../../../lib/supabaseAdmin';
+import getSupabaseAdmin from '../../../lib/supabaseAdmin';
 
 export async function POST(req: Request) {
+  const supabaseAdmin = getSupabaseAdmin();
   const form = await req.formData();
   const file = form.get('file') as File | null;
   if (!file) return NextResponse.json({ error: 'no file' }, { status: 400 });
