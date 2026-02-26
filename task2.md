@@ -54,6 +54,8 @@ npm install
 ！[摘要缓存](image/缓存.png)
 数据库缓存：避免重复调用
 为每个文件缓存已生成的摘要，避免重复调用API
+！[部署vercel](image/部署.png)
+
 ## Section 8: Database Integration with Supabase  
 **Requirements:**  
 - Enhance the app to integrate with the Postgres database in Supabase to store the information about the documents and the AI generated summary.
@@ -65,9 +67,12 @@ Test the app in your local development environment, then deploy the app to Verce
 **Steps with major screenshots:**
 
 > [your steps and screenshots go here]
-
-
+！[数据库]（image/数据库.png）
+![sql查询]（image/sql查询.png）
 ## Section 9: Additional Features [OPTIONAL]
 Implement at least one additional features that you think is useful that can better differentiate your app from others. Describe the feature that you have implemented and provide a screenshot of your app with the new feature.
 
 > [Description of your additional features with screenshot goes here]
+![摘要生成历史记录](image/历史摘要.png)
+![摘要查看](image/摘要查看.png)
+![摘要复制](image/摘要复制.png)
