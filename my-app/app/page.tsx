@@ -120,6 +120,29 @@ export default function Home() {
               <span style={{ fontSize: "20px" }}>🍯</span>
               Files Upload
             </Link>
+
+            <Link 
+              href="/summary"
+              style={{
+                padding: "20px 24px",
+                background: "linear-gradient(90deg, #1e90ff 0%, #4169e1 100%)",
+                color: "#fff",
+                textDecoration: "none",
+                borderRadius: "24px",
+                fontSize: "16px",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                transition: "all 0.3s ease",
+                boxShadow: "0 6px 15px rgba(30, 144, 255, 0.4)",
+                border: "3px solid #daa520"
+              }}
+            >
+              <span style={{ fontSize: "20px" }}>🧠</span>
+              AI SMART SUMMARY
+            </Link>
           </div>
 
           {/* Status Message */}

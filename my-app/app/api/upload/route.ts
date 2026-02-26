@@ -9,7 +9,12 @@ export async function POST(req: Request) {
   if (!file) return NextResponse.json({ error: 'no file' }, { status: 400 });
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const filename = `${Date.now()}_${file.name}`;
+  if (buffer.length === 0) {
+    return NextResponse.json({ error: '文件为空' }, { status: 400 });
+  }
+
+  const safeName = sanitizeFilename(file.name);
+  const filename = `${Date.now()}_${safeName}`;
 
   const { error } = await supabaseAdmin
     .storage
@@ -21,4 +26,18 @@ export async function POST(req: Request) {
   const publicUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/documents/${encodeURIComponent(filename)}`;
 
   return NextResponse.json({ url: publicUrl });
+}
+
+function sanitizeFilename(name: string) {
+  // 保留扩展名，只允许字母数字、连字符、下划线和点
+  const lastDot = name.lastIndexOf('.')
+  const ext = lastDot !== -1 ? name.slice(lastDot) : ''
+  const base = lastDot !== -1 ? name.slice(0, lastDot) : name
+  const safeBase = base.replace(/[^a-zA-Z0-9-_]/g, '_')
+  return safeBase + ext
+}
+
+export async function POST_SAFE(req: Request) {
+  // 备用导出，保持兼容性（未被调用）
+  return POST(req)
 }

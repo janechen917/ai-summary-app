@@ -108,7 +108,7 @@ Open the forwarded port (Codespaces "Ports" tab) and confirm the page loads.
 Here is the default Next.js starter page you should see:
 
 > [SCREENSHOT PLACEHOLDER — After running the dev server, capture the Next.js starter page and save a screenshot here.]
-
+![SCREENSHOT PLACEHOLDER — After logging into Vercel (or running `vercel login`), capture the login prompt and save a screenshot here](image/next.js.png)
 
 
 ### Add a minimal UI 
@@ -140,7 +140,7 @@ This component is the starting page of the AI Summary App. When the page loads, 
 Visit the app in your browser again to verify the changes took effect.
 
 > [SCREENSHOT PLACEHOLDER — After updating `app/page.tsx`, capture a screenshot of the minimal UI and save it here.]
-
+![SCREENSHOT PLACEHOLDER — After updating `app/page.tsx`, capture a screenshot of the minimal UI and save it here](image/默认页面.png)
 Start a new terminal
 Let's commit this frontend scaffold as our first feature:
 
@@ -167,7 +167,7 @@ vercel login
 ```
 
 > [SCREENSHOT PLACEHOLDER — After logging into Vercel (or running `vercel login`), capture the login prompt and save a screenshot here.]
-![SCREENSHOT PLACEHOLDER — After logging into Vercel (or running `vercel login`), capture the login prompt and save a screenshot here](image/登录vercel.png)
+![SCREENSHOT PLACEHOLDER — After logging into Vercel (or running `vercel login`), capture the login prompt and save a screenshot here](image/vercellogin.png)
 Now deploy the app from the `my-app/` folder
 
 ```bash
@@ -317,7 +317,7 @@ Open `http://localhost:3000` and click the **Check backend** button. It should r
 Example output:
 
 > [SCREENSHOT PLACEHOLDER — After clicking the backend check button, capture the health-check output and save a screenshot here.]
-
+![Screenshot of AI Summary App showing successful backend health check with status message Backend says: Next.js backend is running displayed below the Check backend button](image/check%20backend.png)
 
 **Commit checkpoint:**
 
