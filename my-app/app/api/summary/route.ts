@@ -3,11 +3,13 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import getSupabaseAdmin from '../../../lib/supabaseAdmin';
 
-// 使用智谱 AI (兼容 OpenAI API 格式)
-const openai = new OpenAI({
-  apiKey: process.env.ZHIPU_API_KEY,
-  baseURL: 'https://open.bigmodel.cn/api/paas/v4/',
-});
+// 延迟初始化 OpenAI 客户端，避免构建时错误
+function getOpenAIClient() {
+  return new OpenAI({
+    apiKey: process.env.ZHIPU_API_KEY || '',
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4/',
+  });
+}
 
 export async function POST(req: Request) {
   try {
@@ -69,6 +71,7 @@ export async function POST(req: Request) {
     }
 
     // 🤖 第三步：调用智谱 AI API 生成摘要
+    const openai = getOpenAIClient();
     const completion = await openai.chat.completions.create({
       model: "glm-4-flash", // 智谱 AI 模型（更快更便宜，也可以用 glm-4）
       messages: [
