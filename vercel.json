@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "cd my-app && npm install && npm run build",
+  "devCommand": "cd my-app && npm run dev",
+  "installCommand": "cd my-app && npm ci --prefer-offline",
+  "framework": null,
+  "outputDirectory": "my-app/.next",
+  "regions": ["iad1"]
+}
