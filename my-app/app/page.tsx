@@ -143,6 +143,29 @@ export default function Home() {
               <span style={{ fontSize: "20px" }}>🧠</span>
               AI SMART SUMMARY
             </Link>
+
+            <Link 
+              href="/history"
+              style={{
+                padding: "20px 24px",
+                background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)",
+                color: "#fff",
+                textDecoration: "none",
+                borderRadius: "24px",
+                fontSize: "16px",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                transition: "all 0.3s ease",
+                boxShadow: "0 6px 15px rgba(102, 126, 234, 0.4)",
+                border: "3px solid #daa520"
+              }}
+            >
+              <span style={{ fontSize: "20px" }}>📚</span>
+              HISTORY
+            </Link>
           </div>
 
           {/* Status Message */}
