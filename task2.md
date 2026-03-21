@@ -76,3 +76,4 @@ Implement at least one additional features that you think is useful that can bet
 ![摘要生成历史记录](image/历史摘要.png)
 ![摘要查看](image/摘要查看.png)
 ![摘要复制](image/摘要复制.png)
+vercel部署：ai-summary-app-7u52-git-main-zenaychen-2617s-projects.vercel.app
