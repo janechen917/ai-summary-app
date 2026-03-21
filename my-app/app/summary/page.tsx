@@ -105,7 +105,7 @@ export default function SummaryPage() {
         }
         // 如果是速率限制错误，设置更长的冷却时间
         if (json.errorType === 'RATE_LIMIT') {
-          startCooldown(180); // 180 秒（3分钟）冷却 - 避免智谱AI免费账户速率限制
+          startCooldown(180); // 180 秒（3分钟）冷却 - 避免免费模型速率限制
         } else {
           startCooldown(30); // 其他错误 30 秒冷却
         }
@@ -114,7 +114,7 @@ export default function SummaryPage() {
         setTextLength(json.textLength);
         setWarning(json.warning || "");
         setMessage(json.fromCache ? "✅ 从缓存加载摘要" : "✅ 摘要生成成功！");
-        // 成功后设置 120 秒冷却，防止频繁请求（智谱AI免费账户限制）
+        // 成功后设置 120 秒冷却，防止频繁请求
         startCooldown(120);
       }
     } catch (err: any) {
@@ -404,7 +404,7 @@ export default function SummaryPage() {
               }}>
                 <li>支持 .txt、.md 等文本格式文件</li>
                 <li>最大支持 10 万字符（超出会自动截断）</li>
-                <li>AI 摘要基于智谱 AI GLM-4 模型</li>
+                <li>AI 摘要基于 GitHub Models（默认 gpt-4o-mini）</li>
                 <li>生成时间约 3-10 秒，请耐心等待</li>
                 <li><strong>💾 智能缓存：</strong>相同文件自动加载缓存摘要</li>
                 <li><strong>⏰ 自动冷却：</strong>成功后等待 2 分钟，速率限制后 3 分钟</li>
